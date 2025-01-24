@@ -1,0 +1,175 @@
+/* components/sidebar.css */
+:root {
+    --primary-color: rgba(255,240,245,0.95);
+    --secondary-color: #ff69b4;
+    --accent-color: #ff1493;
+    --sidebar-width: 100px;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --text-color: #333;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    z-index: 1000;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493);
+    box-shadow: 0 4px 20px rgba(255,105,180,0.3);
+    transition: transform 0.3s ease;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.avatar-wrapper:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0 12px;
+}
+
+.nav-item {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    width: 3px;
+    height: 0;
+    background: var(--secondary-color);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.nav-item:hover::before {
+    height: 60%;
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(255,105,180,0.15), transparent);
+    box-shadow: inset 3px 0 8px rgba(255,105,180,0.1);
+}
+
+.nav-item.active::before {
+    height: 80%;
+}
+
+.nav-item:hover {
+    transform: translateX(8px);
+}
+
+.nav-icon {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.nav-item.active .nav-icon {
+    color: var(--secondary-color);
+    transform: scale(1.15);
+}
+
+.nav-item:hover .nav-icon {
+    color: var(--accent-color);
+}
+
+.tooltip {
+    position: absolute;
+    left: calc(100% + 20px);
+    background: var(--glass-bg);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(8px);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.1);
+    white-space: nowrap;
+    z-index: 9999;
+}
+
+.nav-item:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 80px;
+        padding: 1.5rem 0;
+    }
+    
+    .avatar {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .nav-icon {
+        font-size: 1.4rem;
+    }
+    
+    .tooltip {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 60px;
+        padding: 1rem 0;
+    }
+    
+    .avatar {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-item {
+        height: 50px;
+    }
+}

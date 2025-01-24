@@ -1,0 +1,32 @@
+<aside class="sidebar">
+    <div class="avatar-wrapper">
+        <img src="/your-avatar.jpg" class="avatar" alt="用户头像"> <!-- 使用绝对路径 -->
+    </div>
+
+    <nav class="nav-container">
+        <div class="nav-item" data-target="home">
+            <i class="fas fa-home nav-icon"></i>
+            <span class="tooltip">创意首页</span>
+        </div>
+        <div class="nav-item" data-target="portfolio">
+            <i class="fas fa-palette nav-icon"></i>
+            <span class="tooltip">设计作品</span>
+        </div>
+        <div class="nav-item" data-target="forum">
+            <i class="fas fa-comments nav-icon"></i>
+            <span class="tooltip">创意论坛</span>
+        </div>
+        <div class="nav-item" data-target="projects">
+            <i class="fas fa-cubes nav-icon"></i>
+            <span class="tooltip">项目案例</span>
+        </div>
+        <div class="nav-item" data-target="collections">
+            <i class="fas fa-heart nav-icon"></i>
+            <span class="tooltip">灵感收藏</span>
+        </div>
+        <div class="nav-item" data-target="settings">
+            <i class="fas fa-cog nav-icon"></i>
+            <span class="tooltip">个性设置</span>
+        </div>
+    </nav>
+</aside>

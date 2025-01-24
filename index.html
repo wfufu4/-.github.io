@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/components/sidebar.css">
+    <script src="/components/sidebar.js"></script>
+
+    <!-- 加载侧边栏CSS -->
+    <link rel="stylesheet" href="/components/sidebar.css">
+</head>
+<body>
+    <!-- 侧边栏容器会自动插入 -->
+    
+    <!-- 页面内容 -->
+    <main style="margin-left: 100px; padding: 20px;">
+        <h1>欢迎来到我的网站</h1>
+        <!-- 其他页面内容 -->
+    </main>
+
+    <!-- 加载侧边栏JS -->
+    <script src="/components/sidebar.js"></script>
+</body>
+
+       <style>
+        :root {
+            --primary-color: rgba(255,240,245,0.95);
+            --secondary-color: #ff69b4;
+            --accent-color: #ff1493;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --text-color: #333;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(45deg, #fff5f9, #fff0fd);
+        }
+
+        /* 首页容器 */
+        .home-container {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 统计卡片 */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+        }
+
+        /* 轮播图 */
+        .carousel-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 2rem;
+            color: white;
+        }
+
+        /* 快速入口 */
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .action-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .action-card:hover {
+            background: rgba(255,240,245,0.9);
+            transform: translateY(-3px);
+        }
+
+        /* 时间线 */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 20px;
+            bottom: -2rem;
+            width: 2px;
+            background: rgba(255,105,180,0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- 首页内容 -->
+    <div class="home-container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users fa-2x" style="color: white;"></i>
+                </div>
+                <div>
+                    <h3>1,234</h3>
+                    <p>活跃创作者</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-lightbulb fa-2x" style="color: white;"></i>
+                </div>
+                <div>
+                    <h3>5,678</h3>
+                    <p>创意灵感</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-project-diagram fa-2x" style="color: white;"></i>
+                </div>
+                <div>
+                    <h3>890</h3>
+                    <p>进行中项目</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel-slide" id="carouselSlide">
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/random/1200x400?creative" alt="创意灵感">
+                    <div class="carousel-caption">
+                        <h3>发现无限可能</h3>
+                        <p>探索全球创意工作者的杰出作品</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://source.unsplash.com/random/1200x400?design" alt="设计作品">
+                    <div class="carousel-caption">
+                        <h3>设计新趋势</h3>
+                        <p>掌握最新设计理念与技巧</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <div class="action-card" onclick="showUploadPanel()">
+                <i class="fas fa-upload fa-2x" style="color: var(--secondary-color);"></i>
+                <h4>快速上传</h4>
+                <p>立即分享你的创意作品</p>
+            </div>
+            <div class="action-card" onclick="startNewProject()">
+                <i class="fas fa-plus-circle fa-2x" style="color: var(--secondary-color);"></i>
+                <h4>新建项目</h4>
+                <p>开启你的创意旅程</p>
+            </div>
+            <div class="action-card" onclick="browseTemplates()">
+                <i class="fas fa-palette fa-2x" style="color: var(--secondary-color);"></i>
+                <h4>模板市场</h4>
+                <p>选择精美设计模板</p>
+            </div>
+        </div>
+
+        <div class="timeline">
+            <h2>最新动态</h2>
+            <div class="timeline-item">
+                <h4>新功能上线！</h4>
+                <p>创意协作空间现已支持实时协同编辑</p>
+                <small>2小时前</small>
+            </div>
+            <div class="timeline-item">
+                <h4>设计大赛通知</h4>
+                <p>2024国际创意设计大赛正式启动</p>
+                <small>5小时前</small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 轮播图功能
+        let currentSlide = 0;
+        const carouselSlide = document.getElementById('carouselSlide');
+        const slides = document.querySelectorAll('.carousel-item');
+        const carouselContainer = document.querySelector('.carousel-container');
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            carouselSlide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // 自动轮播
+        let carouselInterval = setInterval(nextSlide, 5000);
+
+        // 暂停轮播
+        carouselContainer.addEventListener('mouseenter', () => {
+            clearInterval(carouselInterval);
+        });
+
+        carouselContainer.addEventListener('mouseleave', () => {
+            carouselInterval = setInterval(nextSlide, 5000);
+        });
+
+        // 快速入口功能
+        function showUploadPanel() {
+            alert('此功能需登录后使用');
+        }
+
+        function startNewProject() {
+            alert('新建项目功能即将上线！');
+        }
+
+        function browseTemplates() {
+            alert('正在跳转至模板市场...');
+        }
+    </script>
+</body>
+</html>
